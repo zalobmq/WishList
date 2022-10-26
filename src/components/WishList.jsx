@@ -11,8 +11,8 @@ function WishList({ wishes }) {
   // console.log(wishes);
   return (
     <ul className="list-group">
-      {wishes.map(({ text, done }) => (
-        <WishItem wish={{ text, done }} key={`wishItem-${Uuidv4()}`} />
+      {wishes.map(({ id, text, done }) => (
+        <WishItem wish={{ id, text, done }} key={`wishItem-${id}`} />
       ))}
     </ul>
   );
@@ -21,9 +21,10 @@ function WishList({ wishes }) {
 WishList.propTypes = {
   wishes: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
       done: PropTypes.bool.isRequired,
-    })
+    }),
   ),
 };
 
