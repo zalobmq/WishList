@@ -33,7 +33,12 @@ function App() {
           setWishes([...wishes, newWish]);
         }}
       />
-      <WishList wishes={wishes} />
+      <WishList 
+      wishes={wishes}
+      onUpdateWish = {(updatedWish) =>{
+        console.log(updatedWish);
+      }} 
+      />
     </>
   );
 }

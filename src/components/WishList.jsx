@@ -1,18 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 as Uuidv4 } from 'uuid';
 import WishItem from './WishItem';
 
 /**
  * Esta funcion recibe el objeto wishes
  *
  */
-function WishList({ wishes }) {
+function WishList({ wishes  , onUpdateWish}) {
   // console.log(wishes);
   return (
     <ul className="list-group">
       {wishes.map(({ id, text, done }) => (
-        <WishItem wish={{ id, text, done }} key={`wishItem-${id}`} />
+        <WishItem 
+        wish={{ id, text, done }} 
+        key={`wishItem-${id}`} 
+        onChangeWish = {(updatedWish) =>{
+          //console.log(updatedWish);
+          onUpdateWish(updatedWish);
+        }}
+        />
       ))}
     </ul>
   );
@@ -26,10 +32,13 @@ WishList.propTypes = {
       done: PropTypes.bool.isRequired,
     }),
   ),
+  onUpdateWish: PropTypes.func,
+
 };
 
 WishList.defaultProps = {
   wishes: [],
+  onUpdateWish: () => ({ id: '' , text: '' , done:false}),
 };
 
 export default WishList;
