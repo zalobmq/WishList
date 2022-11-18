@@ -5,26 +5,31 @@ import classNames from 'classnames';
 function WishItem({ wish, onChangeWish }) {
   return (
     <li className="list-group-item wishItem">
-      <input
-        type="checkbox"
-        defaultChecked={wish.done}
-        id={wish.id}
-        onChange={(event) => {
-          onChangeWish({
-            id: wish.id,
-            text: wish.text,
-            done: event.target.checked,
-          });
-        }}
+      <div class="input-group mb-3 ">
+        <div class="input-group-text ">
+          <input
+            class="form-check-input mt-0"
+            type="checkbox"
+            defaultChecked={wish.done}
+            id={wish.id}
+            onChange={(event) => {
+              onChangeWish({
+                id: wish.id,
+                text: wish.text,
+                done: event.target.checked,
+              });
+            }}
 
-      />
-      <label
-        className={classNames({ 'text-decoration-line-through': wish.done }, // ESTE SE EJECUTA SI done=true
-        )}
-        htmlFor={wish.id}
-        >
-        {wish.text}
-      </label>
+          />
+          <label
+            className={classNames({ 'text-decoration-line-through , clr-complete': wish.done} ,'bx-ws'
+            )}
+            htmlFor={wish.id}
+          >
+            {wish.text}
+          </label>
+        </div>
+      </div>
     </li>
   );
 }
@@ -46,7 +51,7 @@ WishItem.defaultProps = {
     text: '',
     done: false,
   },
-  onChangeWish: () => {},
+  onChangeWish: () => { },
 };
 
 export default WishItem;

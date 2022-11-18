@@ -1,47 +1,44 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.header {
   text-align: center;
+  margin-top: 10px;
 }
 
+:root {
+  background-color: #ebebeb;
+}
+
+.container-wishlist {
+
+  background-color: #ebebeb;
+}
+.bx-ws{
+  margin-left: 20px;
+  font-weight: bold;
+}
+.clr-complete{
+  color: #272d66;
+  font-weight: normal;
+}
+.btn-addW{
+  font-weight: bold;
+  background-color: white;
+}
+.btn-addW:hover{
+  background-color: #272d66;
+  color: #ebebeb;
+  font-weight: bold;
+}
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  width: 5%;
+  margin-bottom: 5px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
- */
-
-/* #root {
+.interface {
   text-align: center;
-  margin-top: 20px;
-} */
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.wishInput-container {
+  margin: 20px;
+}
