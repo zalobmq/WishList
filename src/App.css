@@ -6,7 +6,62 @@
 :root {
   background-color: #ebebeb;
 }
+/*NAV BAR */
+.navBar-container{
+  margin-left: 200px;
+  margin-right: 200px;
+  border-bottom-left-radius: 20px;
+    border-bottom-right-radius:20px ;
+}
+.navBar-section{
+  list-style-type: none;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
 
+  padding-bottom: 30px;
+
+  overflow: hidden;
+  background-color: #0b0e22d2;
+  border-radius: 0px,0px,30px,30px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius:20px ;
+}
+
+.navBar-item{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+
+.navBar-item-logo{
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.navBar-item-seatch{
+  margin-right: 200px;
+  margin-left: 200px;
+}
+.navBar-item-profile{
+  float:right;
+  width: 60px;
+  height: 60px;
+  margin-right: 40px;
+}
+.titulo{
+  color: white;
+  font-size: 20px;
+}
+.bt-profile{
+  border: 0px solid ;
+  background-color: #00000000;
+}
+
+/*-----------*/
 .container-wishlist {
 
   background-color: #ebebeb;
@@ -41,4 +96,19 @@
 
 .wishInput-container {
   margin: 20px;
+}
+
+/*ICON WISH INFO */
+.ico-info-W{
+  margin-left: 20px;
+
+}
+
+.ico-info-W:hover{
+  margin-left: 20px;
+  box-shadow: 0 0 10px #00a2ff;
+
+}
+.bt-info{
+  text-decoration: none;
 }
