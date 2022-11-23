@@ -6,15 +6,20 @@ import 'bootstrap/dist/js/bootstrap.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-const initialWishes = [
-  { id: Uuidv4(), text: 'Aprender React', done: false, description: 'HOLA SOY DESCRIPCION' },
-  { id: Uuidv4(), text: 'Dar de alta a los alumnos en Moodle', done: true, description: '' },
-  { id: Uuidv4(), text: 'Preparar apuntes', done: false, description: '' },
-  { id: Uuidv4(), text: 'Desayunar', done: true, description: '' },
-];
-
 const imgLogo = '/src/img/logo2.png';
 const imgProfile = '/src/img/user.png';
+
+const initialWishes = [
+  { id: Uuidv4(), text: 'Aprender React', done: false, description: 'HOLA SOY DESCRIPCION DE APRENDER ' },
+  { id: Uuidv4(), text: 'Dar de alta a los alumnos en Moodle', done: true, description: 'HOLA SOY DESCRIPCION DE DAR ' },
+  { id: Uuidv4(), text: 'Preparar apuntes', done: false, description: 'HOLA SOY DESCRIPCION DE PREPARAR ' },
+  { id: Uuidv4(), text: 'Desayunar', done: true, description: 'HOLA SOY DESCRIPCION DE DESAYUNAR ' },
+];
+
+
+
+
+
 
 /**
  * Manage a wish list...
@@ -22,6 +27,15 @@ const imgProfile = '/src/img/user.png';
  */
 function App() {
   const [wishes, setWishes] = useState(initialWishes);
+
+  
+useEffect(() => {
+  setWishes(JSON.parse(localStorage.getItem('wishes')) || initialWishes);
+} , []);
+
+useEffect(() => {
+  localStorage.setItem('wishes' , JSON.stringify(wishes));
+} , [wishes]);
 
   useEffect(() => {
     console.log(`Render App x${wishes.length}`);

@@ -13,6 +13,7 @@ function WishInput({ onNewWish }) {
     function saveNewWishAndClear (){
     if (inputText.current.value){
       onNewWish({ id: Uuidv4(), text: inputText.current.value, done: false , description:'' });
+      
       inputText.current.value = '';
     }
   }

@@ -22,6 +22,7 @@
   padding-bottom: 30px;
 
   overflow: hidden;
+
   background-color: #0b0e22d2;
   border-radius: 0px,0px,30px,30px;
   border-bottom-left-radius: 20px;
@@ -109,6 +110,19 @@
   box-shadow: 0 0 10px #00a2ff;
 
 }
+
+.ico-delete-W{
+  margin-left: 20px;
+}
+.ico-delete-W:hover{
+  margin-left: 20px;
+  box-shadow: 0 0 10px #ff0000;
+}
 .bt-info{
   text-decoration: none;
+}
+
+.head-modal-info{
+  color:white;
+  background-color: #0b0e22d2;
 }
