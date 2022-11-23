@@ -38,14 +38,14 @@ function MyVerticallyCenteredModal({ parentToChild, showM, onHide }) {
         <br/>
         <InputGroup>
           <InputGroup.Text>
-            Edit the description
+            Edit description
           </InputGroup.Text>
           <Form.Control as="textarea" aria-label="With textarea" defaultValue={parentToChild.description} />
         </InputGroup>
 
       </Modal.Body>
       <Modal.Footer>
-        <Button className='bt-saveAndClouse' onClick={onHide}>Save and Close</Button>
+        <Button className='bt-saveAndClouse' onClick={onHide}>Save & Close</Button>
       </Modal.Footer>
     </Modal>
   );

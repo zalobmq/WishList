@@ -39,8 +39,8 @@
 }
 
 .navBar-item-logo{
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   float: left;
 }
 .navBar-item-seatch{
@@ -49,18 +49,26 @@
 }
 .navBar-item-profile{
   float:right;
-  width: 60px;
-  height: 60px;
-  margin-right: 40px;
+  width: 300px;
+  height: 20px;
+  margin-right: 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+
+
+}
+.ico-profile{
+  float: left;
+  margin: 5px;
+}
+.tl-profile{
+  margin: 5px;
 }
 .titulo{
   color: white;
   font-size: 20px;
 }
-.bt-profile{
-  border: 0px solid ;
-  background-color: #00000000;
-}
+
 
 /*-----------*/
 .container-wishlist {
