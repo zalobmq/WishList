@@ -134,3 +134,28 @@
   color:white;
   background-color: #0b0e22d2;
 }
+
+
+.bt-search{
+  margin-top: 20px;
+  box-shadow: 0 0 10px #ff0000;
+}
+.bt-search:hover{
+  box-shadow: 0 0 10px #ff000000;
+
+}
+.bt-profile{
+  box-shadow: 0 0 10px #ffdd00;
+}
+.bt-profile:hover{
+  box-shadow: 0 0 10px #ff000000;
+
+}
+
+.tl-seconday-search{
+  color: gray
+}
+.tamaño{
+  height: 300px;
+
+}

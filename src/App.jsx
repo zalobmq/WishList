@@ -8,34 +8,29 @@ import 'bootstrap/dist/js/bootstrap.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import ModalPerfil from './components/ModalPerfil';
+import ModalSearch from './components/modalSearch';
 
 
 const imgLogo = '/src/img/logo2.png';
-const imgProfile = '/src/img/user.png';
 
 const initialWishes = [
-  { id: Uuidv4(), text: 'Aprender React', done: false, description: 'HOLA SOY DESCRIPCION DE APRENDER ' },
-  { id: Uuidv4(), text: 'Dar de alta a los alumnos en Moodle', done: true, description: 'HOLA SOY DESCRIPCION DE DAR ' },
-  { id: Uuidv4(), text: 'Preparar apuntes', done: false, description: 'HOLA SOY DESCRIPCION DE PREPARAR ' },
-  { id: Uuidv4(), text: 'Desayunar', done: true, description: 'HOLA SOY DESCRIPCION DE DESAYUNAR ' },
+
 ];
-
-
-
-
-
 
 /**
  * Manage a wish list...
  * @returns HTML with a wish list.
  */
 function App() {
-  const [wishes, setWishes] = useState(initialWishes);
+
+  const [wishes, setWishes] = useState([]);
   const [modalShow, setModalShow] = React.useState(false);
+  const [modalSearch, setModalSearchShow] = React.useState(false);
+
 
 
   useEffect(() => {
-    setWishes(JSON.parse(localStorage.getItem('wishes')) || initialWishes);
+    setWishes(JSON.parse(localStorage.getItem('wishes')) || []);
   }, []);
 
   useEffect(() => {
@@ -48,7 +43,7 @@ function App() {
 
   return (
     <div className="container-fluid container-wishlist">
-      <div className='navBar-container'>
+      <div className="navBar-container">
         <ul className='navBar-section'>
           <li className=' navBar-item navBar-item-logo'>
             <img className='navBar-item-logo' src={imgLogo}></img>
@@ -67,14 +62,30 @@ function App() {
             </Button>
           </li>
         </ul>
+        {/* MODAL PERFIL */}
         <ModalPerfil
           showM={modalShow}
           onHide={() => setModalShow(false)}
         />
+        {/* MODAL VENTANA BUSCAR */}
+        <ModalSearch
+          showM={modalSearch}
+          onHide={() => setModalSearchShow(false)}
+        />
       </div>
-
-      <div className='interface'>
-        <div className='wishInput-container'>
+      {/* BOTON DE BUSCAR */}
+      <div className="interface ">
+        <Button variant="outline-danger"  className="bt-search" onClick={() => setModalSearchShow(true)}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16" className="ico-profile">
+            <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+            <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+          </svg>
+          <b className="tl-profile">WINDOWS SEARCH WISH</b>
+        </Button>
+      </div>
+      <div className="interface">
+        {/* CAMPO DE TEXTO PARA AÑADIR NUEVO DESEO */}
+        <div className="wishInput-container">
           <WishInput
             onNewWish={(newWish) => {
               setWishes([...wishes, newWish]);
@@ -82,6 +93,7 @@ function App() {
           />
 
         </div>
+        {/* LISTA DE LOS DESEOS GUARDADOS  */}
         <WishList
           wishes={wishes}
           onUpdateWish={(updatedWish) => {
@@ -89,6 +101,8 @@ function App() {
             const modifyWish = updatedWishes.find((wish) => wish.id === updatedWish.id);
             modifyWish.text = updatedWish.text;
             modifyWish.done = updatedWish.done;
+            modifyWish.description = updatedWish.description;
+
             setWishes(updatedWishes);
           }}
         />
@@ -98,4 +112,3 @@ function App() {
 }
 
 export default App;
-
