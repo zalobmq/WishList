@@ -17,16 +17,6 @@ function WishItem({ wish, onChangeWish }) {
       description: wish.description,
     });
   };
-  /* function deleteWish(idDelWish) {
-    for (let i = 0; i < allwishes.length; i++) {
-      console.log(`ID A BUSCAR: ${idDelWish.id}`);
-      if (allwishes[i].id === idDelWish.id) {
-        allwishes.splice(i, 1);
-        break;
-      }
-    }
-    localStorage.setItem('wishes', JSON.stringify(allwishes));
-  } */
   return (
     <li className="list-group-item wishItem">
       <div className="input-group mb-3 ">

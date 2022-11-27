@@ -68,7 +68,23 @@
   color: white;
   font-size: 20px;
 }
+/* --------- */
 
+.sections-inputs{
+  border: 1px solid rgb(202, 202, 202);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 20px #ffffff;
+
+}
+.title-section{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
 /*-----------*/
 .container-wishlist {
