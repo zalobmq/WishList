@@ -3,19 +3,21 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import MyVerticallyCenteredModal from './modalInfo';
 
+
 /**
  * WishItem ___ ITEM DE LA LISTA, INCLUYE EL CHECKBOX Y LOS BOTONES DE INFO Y BORRAR.
- *
+ * 
  * @param {Object} wish
  * @param {Object} onChangeWish
  * @param {Object} alls
- * @returns
+ * @returns 
  */
 
 function WishItem({ wish, onChangeWish, alls }) {
+
 //---------------------------------------------------
-  // VARS
-  //---------------------------------------------------
+  //VARS
+//---------------------------------------------------
 
   const [modalShow, setModalShow] = React.useState(false);
   const [data, setData] = useState({});
@@ -28,15 +30,19 @@ function WishItem({ wish, onChangeWish, alls }) {
     });
   };
 
-  //---------------------------------------------------
-  //---------------------------------------------------
+  function deleteWish(alls , wish){
+
+    alls = alls.filter((item) => item.text !== wish.text);
+  }
+//---------------------------------------------------
+//---------------------------------------------------
 
   return (
     <li className="list-group-item wishItem">
       <div className="input-group mb-3 ">
         <div className="input-group-text ">
 
-          {/* CHECKBOX ___ Modifica el estado del deseo chekeado= Realizado , noCheckeado= No realizado */}
+        {/* CHECKBOX ___ Modifica el estado del deseo chekeado= Realizado , noCheckeado= No realizado */}
           <input
             className="form-check-input mt-0"
             type="checkbox"
@@ -53,7 +59,7 @@ function WishItem({ wish, onChangeWish, alls }) {
 
           />
 
-          {/* NOMBRE DEL DESEO  ___ MUESTRA EL NOMBRE QUE LE PUSIMOS AL DESEO AL CREARLO */}
+          {/* NOMBRE DEL DESEO  ___ MUESTRA EL NOMBRE QUE LE PUSIMOS AL DESEO AL CREARLO*/}
 
           <label className={classNames({ 'text-decoration-line-through , clr-complete': wish.done }, 'bx-ws')} htmlFor={wish.id}>
             {wish.text}
@@ -103,6 +109,7 @@ function WishItem({ wish, onChangeWish, alls }) {
     </li>
   );
 }
+
 
 WishItem.propTypes = {
   wish: PropTypes.shape({

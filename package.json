@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint --fix src/**/*.{js,jsx}",
-    "format": "prettier --write src/**/*.{html,css,js,jsx,json}"
+    "format": "prettier --write src/**/*.{html,css,js,jsx,json}",
+    "doc": "jsdoc -r -d -R README ./doc ./src"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",

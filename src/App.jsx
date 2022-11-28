@@ -36,7 +36,7 @@ function App() {
 
   //---------------------------------------------------
   //---------------------------------------------------
-
+    //Local storage - Para guardar en local los datos de la lista , si no contiene datos se inicializa con un array vacio.
   useEffect(() => {
     setWishes(JSON.parse(localStorage.getItem('wishes')) || []);
   }, []);

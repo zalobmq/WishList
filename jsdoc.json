@@ -1,0 +1,16 @@
+{
+  "plugins":[],
+  "source":{
+    "include":["src"],
+    "includePattern":".js$",
+    "excloudePattern": "(node_modules|docs)"
+  },
+  "templates":{
+    "cleverLinks":false,
+    "monospaceLinks":false
+  },
+  "opts":{
+    "recourse":"true",
+    "destination": "./doc"
+  }
+}
