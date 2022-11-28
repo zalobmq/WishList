@@ -10,7 +10,7 @@ import MyVerticallyCenteredModal from './modalInfo';
  * @param {Object} wish
  * @param {Object} onChangeWish
  * @param {Object} alls
- * @returns 
+ * @returns Item de la lista
  */
 
 function WishItem({ wish, onChangeWish, alls }) {

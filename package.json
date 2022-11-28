@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint --fix src/**/*.{js,jsx}",
     "format": "prettier --write src/**/*.{html,css,js,jsx,json}",
-    "doc": "jsdoc -R ./README.md -d ./doc ./src/"
+    "doc": "jsdoc -R ./README.md -d ./doc ./src ./src/components"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",

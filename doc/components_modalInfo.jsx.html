@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/modalInfo.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/modalInfo.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+
+/**
+ * MODAL INFO ___ INFORMACION DEL DESEO Y EDICION DE LA DESCRIPCION DEL MISMO.
+ *
+ * @param {Object} parentToChild
+ * @param {Object} showM
+ * @param {Object} onHide
+ * @param {Object} dsToParent
+ * @returns
+ */
+function MyVerticallyCenteredModal({
+  parentToChild, showM, onHide, dsToParent,
+}) {
+//---------------------------------------------------
+  // VARS
+  //---------------------------------------------------
+
+  const inputText = useRef();
+
+  //---------------------------------------------------
+  // FUNTIONS
+  //---------------------------------------------------
+
+  /**
+   * Devuelve un string con el estado del deseo.
+   * @param {boolean} state
+   * @returns {String} Valor del deseo.
+   */
+
+  function printState(state) {
+    const yes = 'Finished ✅';
+    const no = 'Not finished ❌';
+
+    if (state) {
+      // console.log(state);
+      return yes;
+    }
+    // console.log(state);
+    return no;
+  }
+
+  /**
+   * Te permite guardar y editar la descripcion de un deseo.
+   *
+   * @returns Deseo modificado.
+   */
+
+  function saveEditDescription() {
+    // console.log(`El valor añadiod es: ${inputText.current.value}`);
+    if (inputText.current.value) {
+      dsToParent({
+        id: parentToChild.id,
+        text: parentToChild.text,
+        done: parentToChild.done,
+        description: inputText.current.value,
+      });
+    }
+    // console.log(`descripcion introducida en el wish: ${parentToChild.description}`);
+  }
+
+  //---------------------------------------------------
+  //---------------------------------------------------
+
+  return (
+
+  // PARAMETROS DEL MODAL
+
+    &lt;Modal
+      show={showM}
+      onHide={onHide}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+
+      {/* MODAL-HEADER __ Cabecera con titulo del modal */}
+
+      &lt;Modal.Header className="head-modal-info">
+        &lt;Modal.Title id="contained-modal-title-vcenter">
+          &lt;div className="title-modal-info">
+            &lt;h2>Description wish&lt;/h2>
+          &lt;/div>
+
+        &lt;/Modal.Title>
+      &lt;/Modal.Header>
+
+      {/* MODAL-BODY __ Datos del deseo y campo para edirar */}
+
+      &lt;Modal.Body>
+        &lt;h4>
+          &lt;b>Name wish: &lt;/b>
+          {parentToChild.text}
+        &lt;/h4>
+        &lt;br />
+        &lt;h5>
+          &lt;b>State wish: &lt;/b>
+          {printState(parentToChild.done)}
+        &lt;/h5>
+        &lt;br />
+        &lt;InputGroup>
+          &lt;InputGroup.Text>
+            Edit description
+          &lt;/InputGroup.Text>
+          &lt;Form.Control
+            as="textarea"
+            aria-label="With textarea"
+            defaultValue={parentToChild.description}
+            ref={inputText}
+          />
+
+        &lt;/InputGroup>
+
+      &lt;/Modal.Body>
+
+      {/* MODAL-FOOTER __ BOTONES PARA GUARDAR Y CERRAR LA VENTANA */}
+
+      &lt;Modal.Footer>
+        &lt;Button className="bt-saveAndClouse" onClick={() => saveEditDescription()}>Save &lt;/Button>
+        &lt;Button variant="secondary" onClick={onHide}>
+          Cancel
+        &lt;/Button>
+      &lt;/Modal.Footer>
+    &lt;/Modal>
+  );
+}
+MyVerticallyCenteredModal.propTypes = {
+  newwish: PropTypes.func,
+  parentToChild: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      done: PropTypes.bool.isRequired,
+      description: PropTypes.string.isRequired,
+    }),
+  ),
+};
+MyVerticallyCenteredModal.defaultProps = {
+  newwish: () => { },
+  parentToChild: () => ({
+    id: '', text: '', done: false, description: '',
+  }),
+
+};
+export default MyVerticallyCenteredModal;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#ModalResultSearch">ModalResultSearch</a></li><li><a href="global.html#MyVerticallyCenteredModal">MyVerticallyCenteredModal</a></li><li><a href="global.html#WishInput">WishInput</a></li><li><a href="global.html#WishItem">WishItem</a></li><li><a href="global.html#WishList">WishList</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Nov 28 2022 15:32:39 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
