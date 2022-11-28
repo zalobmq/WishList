@@ -36,7 +36,8 @@ function App() {
 
   //---------------------------------------------------
   //---------------------------------------------------
-    //Local storage - Para guardar en local los datos de la lista , si no contiene datos se inicializa con un array vacio.
+  /* Local storage - Para guardar en local los datos de la lista ,
+  si no contiene datos se inicializa con un array vacio */
   useEffect(() => {
     setWishes(JSON.parse(localStorage.getItem('wishes')) || []);
   }, []);
@@ -59,33 +60,38 @@ function App() {
    * @returns {String} Valor del deseo.
    */
 
-  function searchWishInWishList(wishes) {
+  function searchWishInWishList(wishesS) {
     /* Comprobamos que el campo de texto se hayan introducido valores */
     if (inputTextSearch.current.value) {
       const textMayus = inputTextSearch.current.value.toUpperCase();
       let i = 0;
       let stop = true;
 
-      /* Si se han introducido ->  Convertimos el nombre del deseo introducido y el de la lista a mayusculas , para que no de error en caso de que el usuario lo introduzca de diferente manera a como esta guardado. */
+      /* Si se han introducido ->  Convertimos el nombre del deseo
+      introducido y el de la lista a mayusculas , para que no de error
+      en caso de que el usuario lo introduzca de diferente manera a como esta guardado. */
 
-      /* Recorremos el array de deseos en busca del deseo con el mismo nombre introducido */
-      /* Recorreremos item por item de los guardados en la lista y comparandolos con el texto introducido.
+      /* Recorremos el array de deseos en busca del deseo
+       con el mismo nombre introducido */
+      /* Recorreremos item por item de los guardados en la lista y
+      comparandolos con el texto introducido.
       El que sea igual lo setearenos en el data search y lo mandaremos al modal de result search */
       do {
-        if (wishes[i].text.toUpperCase() === textMayus) {
+        if (wishesS[i].text.toUpperCase() === textMayus) {
           setdataSearch({
-            id: wishes[i].id,
-            text: wishes[i].text,
-            done: wishes[i].done,
-            description: wishes[i].description,
+            id: wishesS[i].id,
+            text: wishesS[i].text,
+            done: wishesS[i].done,
+            description: wishesS[i].description,
           });
           stop = false;
           inputTextSearch.current.value = '';
           return dataSearch;
         }
-        i++;
-      } while (i <= wishes.length || stop);
+        i += 1;
+      } while (i <= wishesS.length || stop);
     }
+    return dataSearch;
   }
 
   //---------------------------------------------------
@@ -96,7 +102,7 @@ function App() {
       <div className="navBar-container">
         <ul className="navBar-section">
           <li className=" navBar-item navBar-item-logo">
-            <img className="navBar-item-logo" src={imgLogo} />
+            <img alt="Logo Web " className="navBar-item-logo" src={imgLogo} />
           </li>
           <li />
           <li className="navBar-item navBar-item-profile">
@@ -153,7 +159,7 @@ function App() {
                   variant="outline-secondary"
                   id="button-addon2"
                   className="btn btn-outline-secondary btn-addW"
-                  onClick={() => { setModalResultSearchShow(true), searchWishInWishList(wishes); }}
+                  onClick={() => { setModalResultSearchShow(true); searchWishInWishList(wishes); }}
                 >
                   Search
                 </Button>
@@ -192,10 +198,10 @@ function App() {
           </div>
         </div>
 
-        {/* WISHLIST  ___ LISTA DE DESEOS GUARDADOS EN LOCAL , SE ACCTUALIZAN SI SE CAMBIA LA DESCRIPCION , EL ESTADO O SI SON BORRADOS */}
+        {/* WISHLIST  ___ LISTA DE DESEOS GUARDADOS EN LOCAL ,
+        SE ACCTUALIZAN SI SE CAMBIA LA DESCRIPCION , EL ESTADO O SI SON BORRADOS */}
 
         <WishList
-
           wishes={wishes}
           onUpdateWish={(updatedWish) => {
             const updatedWishes = [...wishes];

@@ -25,7 +25,7 @@ function WishInput({ onNewWish }) {
     Añade un nuevo deseo a la lista y luego vacia el input para que se pueda añadir mas deseos,
     a demas controla que se haya escrito algun deseo para evitar que se añadan deseos vacios.
 
-  Al crear un nuevo deseo se crea con un id= Autoincrementado , nombre= Introduciodo por el usuario ,
+  Al crear un nuevo deseo se crea con un id= Autoincrementado , nombre= Introduciodo por el usuario
   estado= No realizado , descricion= vacia.
 
    * @returns Nuevo deseo

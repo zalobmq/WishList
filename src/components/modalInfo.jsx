@@ -130,7 +130,7 @@ function MyVerticallyCenteredModal({
   );
 }
 MyVerticallyCenteredModal.propTypes = {
-  newwish: PropTypes.func,
+
   parentToChild: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -141,10 +141,31 @@ MyVerticallyCenteredModal.propTypes = {
   ),
 };
 MyVerticallyCenteredModal.defaultProps = {
-  newwish: () => { },
+
   parentToChild: () => ({
     id: '', text: '', done: false, description: '',
   }),
 
+};
+MyVerticallyCenteredModal.propTypes = {
+  onHide: PropTypes.func,
+  showM: PropTypes.bool,
+  dsToParent: ({
+    id: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    done: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }),
+
+};
+MyVerticallyCenteredModal.defaultProps = {
+  onHide: () => {},
+  showM: true,
+  dsToParent: ({
+    id: '',
+    text: '',
+    done: false,
+    description: '',
+  }),
 };
 export default MyVerticallyCenteredModal;

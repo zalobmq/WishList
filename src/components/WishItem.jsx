@@ -3,21 +3,18 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import MyVerticallyCenteredModal from './modalInfo';
 
-
 /**
  * WishItem ___ ITEM DE LA LISTA, INCLUYE EL CHECKBOX Y LOS BOTONES DE INFO Y BORRAR.
- * 
+ *
  * @param {Object} wish
  * @param {Object} onChangeWish
- * @param {Object} alls
  * @returns Item de la lista
  */
 
-function WishItem({ wish, onChangeWish, alls }) {
-
+function WishItem({ wish, onChangeWish }) {
 //---------------------------------------------------
-  //VARS
-//---------------------------------------------------
+  // VARS
+  //---------------------------------------------------
 
   const [modalShow, setModalShow] = React.useState(false);
   const [data, setData] = useState({});
@@ -30,19 +27,16 @@ function WishItem({ wish, onChangeWish, alls }) {
     });
   };
 
-  function deleteWish(alls , wish){
-
-    alls = alls.filter((item) => item.text !== wish.text);
-  }
-//---------------------------------------------------
-//---------------------------------------------------
+  //---------------------------------------------------
+  //---------------------------------------------------
 
   return (
     <li className="list-group-item wishItem">
       <div className="input-group mb-3 ">
         <div className="input-group-text ">
 
-        {/* CHECKBOX ___ Modifica el estado del deseo chekeado= Realizado , noCheckeado= No realizado */}
+          {/* CHECKBOX ___ Modifica el estado del deseo chekeado= Realizado ,
+           noCheckeado= No realizado */}
           <input
             className="form-check-input mt-0"
             type="checkbox"
@@ -59,15 +53,15 @@ function WishItem({ wish, onChangeWish, alls }) {
 
           />
 
-          {/* NOMBRE DEL DESEO  ___ MUESTRA EL NOMBRE QUE LE PUSIMOS AL DESEO AL CREARLO*/}
+          {/* NOMBRE DEL DESEO  ___ MUESTRA EL NOMBRE QUE LE PUSIMOS AL DESEO AL CREARLO */}
 
           <label className={classNames({ 'text-decoration-line-through , clr-complete': wish.done }, 'bx-ws')} htmlFor={wish.id}>
             {wish.text}
           </label>
+          {/* BOTON INFO ___ MUESTRA UN MODAL CON LA INFORMACION DEL DESEO Y
+          UN CAMPO DE TEXTO PARA EDITAR LA DESCRIPCION */}
 
-          {/* BOTON INFO ___ MUESTRA UN MODAL CON LA INFORMACION DEL DESEO Y UN CAMPO DE TEXTO PARA EDITAR LA DESCRIPCION */}
-
-          <button className="input-group-text ico-info-W" onClick={() => { setModalShow(true); parentToChild(); }}>
+          <button type="button" className="input-group-text ico-info-W" onClick={() => { setModalShow(true); parentToChild(); }}>
 
             {/* Icono del boton  */}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-info-circle" viewBox="0 0 16 16">
@@ -95,7 +89,7 @@ function WishItem({ wish, onChangeWish, alls }) {
 
           {/* BOTON DELETE ___ BORRA EL DESEO EN EL QUE APARECE ESTE BOTON */}
 
-          <button className="input-group-text ico-delete-W " onClick={() => deleteWish(alls, wish)}>
+          <button type="button" className="input-group-text ico-delete-W ">
 
             {/* Icono del boton  */}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
@@ -109,7 +103,6 @@ function WishItem({ wish, onChangeWish, alls }) {
     </li>
   );
 }
-
 
 WishItem.propTypes = {
   wish: PropTypes.shape({

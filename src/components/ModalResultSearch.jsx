@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -78,6 +79,28 @@ function ModalResultSearch({ showM, onHide, wishItem }) {
         <Button variant="outline-secondary" onClick={onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
+
   );
 }
+ModalResultSearch.propTypes = {
+  onHide: PropTypes.func,
+  showM: PropTypes.bool,
+  wishItem: ({
+    id: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    done: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }),
+};
+ModalResultSearch.defaultProps = {
+  onHide: () => {},
+  showM: true,
+  wishItem: ({
+    id: '',
+    text: '',
+    done: false,
+    description: '',
+  }),
+};
+
 export default ModalResultSearch;

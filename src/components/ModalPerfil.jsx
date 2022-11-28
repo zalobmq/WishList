@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -65,4 +66,14 @@ function MyVerticallyCenteredModal({ showM, onHide }) {
     </Modal>
   );
 }
+MyVerticallyCenteredModal.propTypes = {
+  onHide: PropTypes.func,
+  showM: PropTypes.bool,
+
+};
+MyVerticallyCenteredModal.defaultProps = {
+  onHide: () => {},
+  showM: true,
+
+};
 export default MyVerticallyCenteredModal;
