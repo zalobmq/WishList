@@ -1,14 +1,29 @@
-import React  from 'react';
+import React from 'react';
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function modalPerfil({ showM, onHide }) {
+/**
+ * Modal de informacion del autor del proyecto y informacion del mismo.
+ * @param {Object} showM
+ * @param {Object} onHide
+ *
+ * @returns Modal con los datos de mi perfil.
+ */
+function MyVerticallyCenteredModal({ showM, onHide }) {
+//---------------------------------------------------
+  //---------------------------------------------------
+
   return (
+
+  // PARAMETROS DEL MODAL
+
     <Modal
       show={showM}
       size="lg"
     >
+      {/* MODAL-HEADER __ Cabecera con titulo del modal */}
+
       <Modal.Header className="head-modal-info">
         <Modal.Title>
           <div className="title-modal-info">
@@ -17,6 +32,9 @@ function modalPerfil({ showM, onHide }) {
 
         </Modal.Title>
       </Modal.Header>
+
+      {/* MODAL-BODY __ Datos del perfil */}
+
       <Modal.Body>
         <h4>
           <b>Author: </b>
@@ -38,10 +56,13 @@ function modalPerfil({ showM, onHide }) {
           Web development in client environment
         </h4>
       </Modal.Body>
+
+      {/* MODAL-FOOTER __ BOTONE PARA CERRAR LA VENTANA */}
+
       <Modal.Footer>
         <Button variant="outline-secondary" onClick={onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );
 }
-export default modalPerfil;
+export default MyVerticallyCenteredModal;

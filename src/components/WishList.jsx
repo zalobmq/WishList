@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 import WishItem from './WishItem';
 
 /**
- * Esta funcion recibe el objeto wishes
+ * WishList ___ LISTA DE TODOS LOS ITEMS / DESEOS GUARDADOS EN LA LISTA LOCAL.
  *
+ * @param {Object} wishes
+ * @param {Object} onUpdateWish
+ * @returns
  */
 function WishList({ wishes, onUpdateWish }) {
-  // console.log(wishes);
-  
+//---------------------------------------------------
+  //---------------------------------------------------
+
   return (
     <ul className="list-group">
       {wishes.map(({
@@ -23,6 +27,7 @@ function WishList({ wishes, onUpdateWish }) {
             // console.log(updatedWish);
             onUpdateWish(updatedWish);
           }}
+          alls={wishes}
         />
       ))}
     </ul>

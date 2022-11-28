@@ -1,12 +1,25 @@
+/*  ESTILOS DEL HEADER  */
 .header {
   text-align: center;
   margin-top: 10px;
 }
+/* ________________________________________________________________ */
 
+/*  ESTILOS DEL ROOT - Afecta a toda la web */
 :root {
   background-color: #ebebeb;
 }
-/*NAV BAR */
+/* ________________________________________________________________ */
+
+.interface {
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+/* ________________________________________________________________ */
+
+/*  ESTILOS BARRA SUPERIOR DE NAVEGAICON  */
 .navBar-container{
   margin-left: 200px;
   margin-right: 200px;
@@ -43,10 +56,7 @@
   height: 70px;
   float: left;
 }
-.navBar-item-seatch{
-  margin-right: 200px;
-  margin-left: 200px;
-}
+
 .navBar-item-profile{
   float:right;
   width: 300px;
@@ -54,22 +64,26 @@
   margin-right: 20px;
   margin-top: 15px;
   margin-bottom: 20px;
-
-
 }
+/* ________________________________________________________________ */
+
+/*  ESTILOS ICONO DEL BOTON PERFIL  */
 .ico-profile{
   float: left;
   margin: 5px;
 }
+/* ________________________________________________________________ */
+
+/*  ESTILOS TITULO DEL BOTON PERFIL */
 .tl-profile{
   margin: 5px;
 }
-.titulo{
-  color: white;
-  font-size: 20px;
-}
-/* --------- */
 
+/* ________________________________________________________________ */
+
+/*  SECCIONES */
+
+/*  ESTILOS SECCIONES DE BUSCADOR Y AÑADIR */
 .sections-inputs{
   border: 1px solid rgb(202, 202, 202);
   margin-top: 10px;
@@ -77,6 +91,7 @@
   box-shadow: 0 0 20px #ffffff;
 
 }
+/*  ESTILOS TITULOS DE SECCIONES  BUSCADOR Y AÑADIR */
 .title-section{
   text-align: center;
   text-transform: uppercase;
@@ -86,19 +101,27 @@
   padding-bottom: 10px;
 }
 
-/*-----------*/
-.container-wishlist {
+/* ________________________________________________________________ */
 
+/*  ESTILOS CONTENEDOR LISTA DE DESEOS */
+.container-wishlist {
   background-color: #ebebeb;
 }
+
+/*  ESTILOS TITULO DE ELEMENTOS DE LA LISTA */
 .bx-ws{
   margin-left: 20px;
   font-weight: bold;
 }
+
+/*  ESTILOS QUE CAMBIAN AL COMPLETAR UN DESEO */
 .clr-complete{
   color: #272d66;
   font-weight: normal;
 }
+/* ________________________________________________________________ */
+
+/* ESTILOS BOTON AÑADIR DESEO */
 .btn-addW{
   font-weight: bold;
   background-color: white;
@@ -108,22 +131,22 @@
   color: #ebebeb;
   font-weight: bold;
 }
+/* ________________________________________________________________ */
+
 .logo {
   width: 5%;
   margin-bottom: 5px;
 }
 
-.interface {
-  text-align: center;
-  margin-left: 25%;
-  margin-right: 25%;
-}
+/* ________________________________________________________________ */
 
 .wishInput-container {
   margin: 20px;
 }
 
-/*ICON WISH INFO */
+/* ________________________________________________________________ */
+
+/*ESTILO ICONO INFORMACION DEL DESEO*/
 .ico-info-W{
   margin-left: 20px;
 
@@ -135,6 +158,10 @@
 
 }
 
+/* ________________________________________________________________ */
+
+/*ESTILO ICONO BORRAR DESEO*/
+
 .ico-delete-W{
   margin-left: 20px;
 }
@@ -142,24 +169,26 @@
   margin-left: 20px;
   box-shadow: 0 0 10px #ff0000;
 }
+
+/* ________________________________________________________________ */
+
+/*ESTILO BOTON INFORMACION DEL DESEO*/
 .bt-info{
   text-decoration: none;
 }
 
+/* ________________________________________________________________ */
+
+/*ESTILO BOTON INFORMACION DEL DESEO*/
 .head-modal-info{
   color:white;
   background-color: #0b0e22d2;
 }
 
+/* ________________________________________________________________ */
 
-.bt-search{
-  margin-top: 20px;
-  box-shadow: 0 0 10px #ff0000;
-}
-.bt-search:hover{
-  box-shadow: 0 0 10px #ff000000;
+/*ESTILO BOTON PERFIL*/
 
-}
 .bt-profile{
   box-shadow: 0 0 10px #ffdd00;
 }
@@ -168,10 +197,16 @@
 
 }
 
+/* ________________________________________________________________ */
+
+/*ESTILO BOTON CERRAR MODALES*/
 .tl-seconday-search{
   color: gray
 }
+/* ________________________________________________________________ */
+
 .tamaño{
   height: 300px;
 
 }
+/* ________________________________________________________________ */
