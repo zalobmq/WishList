@@ -83,4 +83,3 @@ y un estado y descripción por defecto.
 
 #### -Borrar deseo.
 >Al borrar un deseo se eliminara de la lista de deseos y no se mostrara en la lista inicial.
-## License
